@@ -22,7 +22,6 @@ Key benefits:
 
 ### Core Components
 ```
-```
 ┌──────────────────────┐    ┌──────────────────────┐
 │                      │    │                      │
 │   Telegram Network   │◄──►│    Forwarding Bot    │
@@ -35,7 +34,6 @@ Key benefits:
 │    (rebooter.py)     │◄──►│       (*.txt)        │
 │                      │    │                      │
 └──────────────────────┘    └──────────────────────┘
-```
 ```
 
 ### Data Flow
