@@ -6,7 +6,7 @@ This Telegram bot monitors specific channels for cryptocurrency token deployment
 
 ---
 
-## 📌 Features
+## Features
 
 - **Multi-channel monitoring**: Tracks token deployments from multiple Telegram channels
 - **Customizable tracking**: Add/remove tokens with simple commands
