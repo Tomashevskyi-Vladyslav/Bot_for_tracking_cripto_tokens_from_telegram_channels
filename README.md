@@ -4,6 +4,19 @@
 
 This Telegram bot monitors specific channels for cryptocurrency token deployment announcements and forwards relevant messages based on user-configured tracking lists. The bot supports tracking tokens from multiple sources with different message formats.
 
+---
+
+## 📌 Features
+
+- **Multi-channel monitoring**: Tracks token deployments from multiple Telegram channels
+- **Customizable tracking**: Add/remove tokens with simple commands
+- **Source-specific filtering**: Different commands for different announcement channels
+- **Persistent storage**: Maintains tracking lists between sessions
+- **Automatic recovery**: Self-healing connection with automatic reconnection
+- **User-friendly interface**: Simple commands with helpful responses
+
+---
+
 ## Deployment Options
 
 ### Option 1: Direct Python Execution
@@ -189,3 +202,32 @@ Remember to backup your `DB.txt` and `take_token_from_only.txt` files before upd
    - When updating the code, remember to:
      - For Docker: Rebuild the image and restart containers
      - For systemd: Restart the service (`sudo systemctl restart telegram-token-bot`)
+---
+
+
+## 💻 Usage
+
+```
+add $TOKEN       - Track token from OttoBASEDeployments/bananadeployerBASE
+vd add $TOKEN    - Track token from virtuals_deploy
+bds add $TOKEN   - Track token from bananadeployerSOL
+dell $TOKEN      - Remove token from tracking
+show             - List all tracked tokens
+help             - Show help menu
+```
+
+
+## 📂 Project Structure
+
+```
+.
+├── Untitled.py           - Main bot script
+├── DB.txt                - Database of tracked tokens
+├── take_token_from_only.txt - Tracking preferences
+├── Dockerfile           - Docker configuration
+└── README.md            - This file
+```
+
+## 📄 License
+
+[MIT License](LICENSE)
