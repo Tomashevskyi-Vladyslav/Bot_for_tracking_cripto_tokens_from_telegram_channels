@@ -22,18 +22,12 @@ Key benefits:
 
 ### Core Components
 ```
-┌──────────────────────┐    ┌──────────────────────┐
-│                      │    │                      │
-│   Telegram Network   │◄──►│   Forwarding Bot     │
-│                      │    │     (main.py)        │
-└──────────────────────┘    └──────────┬───────────┘
-                                       │
-┌──────────────────────┐    ┌──────────▼───────────┐
-│                      │    │                      │
-│   Watchdog Service   │◄──►│   State Files        │
-│     (rebooter.py)    │    │   (*.txt)            │
-│                      │    │                      │
-└──────────────────────┘    └──────────────────────┘
+graph TD
+    A[Telegram API] --> B[main.py]
+    B --> C[State Files]
+    C -->|Rule Updates| B
+    D[rebooter.py] -->|Process Check| B
+    B -->|Crash| D
 ```
 
 ### Data Flow
