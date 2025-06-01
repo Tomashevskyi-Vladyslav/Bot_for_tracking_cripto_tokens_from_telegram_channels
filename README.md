@@ -327,18 +327,8 @@ Before declaring success, ensure:
 - **Linux Users:** Use `sudo` only if necessary (avoid for pip installs).  
 - **Still stuck?** Check logs or ask in support forums with error messages.  
 
-This guide minimizes guesswork—follow each step carefully, and your bot should run smoothly! 🚀
-
-
-
-
-
-
-
-
-
-
-
+This guide minimizes guesswork—follow each step carefully, and your bot should run smoothly!
+---
 
 ## 6. Configuration Deep-Dive
 
