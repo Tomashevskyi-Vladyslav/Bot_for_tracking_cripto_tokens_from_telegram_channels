@@ -26,12 +26,12 @@ Key benefits:
 │                      │    │                      │
 │   Telegram Network   │◄──►│   Forwarding Bot     │
 │                      │    │     (main.py)        │
-└──────────────────────┘    └──────────┬──────────┘
+└──────────────────────┘    └──────────┬───────────┘
                                        │
-┌──────────────────────┐    ┌──────────▼──────────┐
+┌──────────────────────┐    ┌──────────▼───────────┐
 │                      │    │                      │
-│   Watchdog Service   │◄──►│   State Files       │
-│     (rebooter.py)    │    │   (*.txt)           │
+│   Watchdog Service   │◄──►│   State Files        │
+│     (rebooter.py)    │    │   (*.txt)            │
 │                      │    │                      │
 └──────────────────────┘    └──────────────────────┘
 ```
@@ -185,18 +185,17 @@ CHENAL_BOT: str = "@YourControlChannel"  # Without quotes
 
 All commands are issued in your control channel:
 
-| Command | Example | Description |
-|---------|---------|-------------|
-| `/help` | `/help` | Show all commands |
-| `/from` | `/from @Source @Target` | Create channel→channel rule |
-| `/id` | `/id 12345678 @Target` | Create user ID→channel rule |
-| `/user` | `/user @Username @Target` | Filter by username |
-| `/delete` | `/delete 3` | Remove rule #3 |
-| `/show` | `/show` | List all rules |
-| `/stop` | `/stop 5` | Pause rule #5 |
-| `/resume` | `/resume 5` | Resume rule #5 |
-| `/pausebot` | `/pausebot` | Pause all rules for 1 minute |
-| `/reboot` | `/reboot` | Graceful restart |
+|   Command   |            Example            |          Description        |
+|-------------|-------------------------------|-----------------------------|
+| `/help`     | `/help`                       | Show all commands           |
+| `/from`     | `/from @Source to @Source`    | Create channel→channel rule |
+| `/id`       | `/id 12345678 to @Target`     | Create user ID→channel rule |
+| `/user`     | `/user @Username to @Target`  | Filter by username          |
+| `/delete`   | `/delete 3`                   | Remove rule #3              |
+| `/list`     | `/list`                       | List all rules              |
+| `/pause`    | `/pause 5`                    | Pause rule #5               |
+| `/resume`   | `/resume 5`                   | Resume rule #5              |
+| `/off`      | `/off`                        | Pause all rules for 1 minute|
 
 ## 9. Security Best Practices
 
