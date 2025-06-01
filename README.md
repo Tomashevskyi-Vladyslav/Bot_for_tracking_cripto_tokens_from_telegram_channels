@@ -118,9 +118,7 @@ psutil==5.9.6
    ```cmd
    pip install telethon psutil
    ```
-
-
-
+   
 ---
 # **Enhanced Installation Guide with Troubleshooting for Non-Technical Users**  
 
