@@ -1,4 +1,4 @@
-# Telegram Token Tracking Bot Documentation (Updated with Deployment)
+# Telegram Token Tracking Bot Documentation
 
 ## Overview
 
@@ -26,7 +26,7 @@ This Telegram bot monitors specific channels for cryptocurrency token deployment
 
 3. Run the bot:
    ```bash
-   python Untitled.py
+   python main.py
    ```
 
 ### Option 2: PM2 Process Manager (for persistent execution)
@@ -38,7 +38,7 @@ This Telegram bot monitors specific channels for cryptocurrency token deployment
 
 2. Start the bot with PM2:
    ```bash
-   pm2 start Untitled.py --name "telegram-token-bot" --interpreter python3
+   pm2 start main.py --name "telegram-token-bot" --interpreter python3
    ```
 
 3. Useful PM2 commands:
@@ -65,7 +65,7 @@ RUN touch DB.txt take_token_from_only.txt && \
     echo "[]" > DB.txt && \
     echo "[]" > take_token_from_only.txt
 
-CMD ["python", "Untitled.py"]
+CMD ["python", "main.py"]
 ```
 
 **Build and Run:**
@@ -102,7 +102,7 @@ CMD ["python", "Untitled.py"]
    [Service]
    User=yourusername
    WorkingDirectory=/path/to/bot
-   ExecStart=/usr/bin/python3 /path/to/bot/Untitled.py
+   ExecStart=/usr/bin/python3 /path/to/bot/main.py
    Restart=always
    RestartSec=15
 
@@ -136,7 +136,7 @@ api_hash = os.getenv('TELEGRAM_API_HASH', 'sindf341ljhdsa12')
 
 Then run with:
 ```bash
-TELEGRAM_API_ID=your_id TELEGRAM_API_HASH=your_hash python Untitled.py
+TELEGRAM_API_ID=your_id TELEGRAM_API_HASH=your_hash python main.py
 ```
 
 Or in Docker:
