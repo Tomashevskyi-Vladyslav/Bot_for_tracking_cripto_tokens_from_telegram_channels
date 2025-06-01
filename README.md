@@ -163,42 +163,29 @@ Remember to backup your `DB.txt` and `take_token_from_only.txt` files before upd
 
 
 ---
-### Important Notes for Deployment
-Data Persistence:
+## Important Notes for Deployment
 
-For Docker deployments, ensure you mount volumes for the database files
+1. **Data Persistence**:
+   - For Docker deployments, ensure you mount volumes for the database files
+   - The example above uses `-v ./data:/app` to persist data in a local `data` directory
 
-The example above uses -v ./data:/app to persist data in a local data directory
+2. **Environment Variables**:
+   For better security, consider modifying the code to use environment variables for:
+   - API credentials (api_id and api_hash)
+   - Target chat IDs
+   - File paths
 
-Environment Variables:
-For better security, consider modifying the code to use environment variables for:
+3. **Logs Monitoring**:
+   - For Docker: `docker logs telegram-token-bot -f`
+   - For systemd: `journalctl -u telegram-token-bot -f`
 
-API credentials (api_id and api_hash)
+4. **Resource Considerations**:
+   - The bot is lightweight but ensure your server has:
+     - Stable internet connection
+     - At least 512MB RAM
+     - Basic CPU resources
 
-Target chat IDs
-
-File paths
-
-Logs Monitoring:
-
-For Docker: docker logs telegram-token-bot -f
-
-For systemd: journalctl -u telegram-token-bot -f
-
-Resource Considerations:
-
-The bot is lightweight but ensure your server has:
-
-Stable internet connection
-
-At least 512MB RAM
-
-Basic CPU resources
-
-Updates:
-
-When updating the code, remember to:
-
-For Docker: Rebuild the image and restart containers
-
-For systemd: Restart the service (sudo systemctl restart telegram-token-bot)
+5. **Updates**:
+   - When updating the code, remember to:
+     - For Docker: Rebuild the image and restart containers
+     - For systemd: Restart the service (`sudo systemctl restart telegram-token-bot`)
