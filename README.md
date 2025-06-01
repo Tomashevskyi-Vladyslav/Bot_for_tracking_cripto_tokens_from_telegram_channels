@@ -471,7 +471,7 @@ A: Update `CHENAL_BOT` in main.py and restart bot
 ### A. Default State Files
 
 **File_to_save_information_on_reboot.txt**:
-```json
+```
 {
   1: {'from': '@YourDummyChannel', 'to': '@YourDummyChannel'},
   ... # Repeat for 20 entries
@@ -479,7 +479,7 @@ A: Update `CHENAL_BOT` in main.py and restart bot
 ```
 
 **save_coments.txt**:
-```json
+```
 {
   1: {'coment': 'none'},
   ... # Repeat for 20 entries
@@ -501,7 +501,5 @@ monitor_script('main.py', 'main.py')
 
 Add these to `main.py` for large channels:
 ```python
-client = TelegramClient('anon', api_id, api_hash,
-                       flood_sleep_threshold=120,
-                       connection_retries=10)
+client = TelegramClient('anon', api_id, api_hash, flood_sleep_threshold=120, connection_retries=10)
 ```
